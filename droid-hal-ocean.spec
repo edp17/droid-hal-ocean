@@ -20,8 +20,20 @@ system\
 #define WANT_ADRENO_QUIRKS 1\
 %{nil}
 
+%define droid_target_aarch64 1
+
 #decomission sys-fs-pstore.service
 %define makefstab_skip_entries /sys/fs/pstore
+
+%define straggler_files \
+/cache\
+/d\
+/product\
+/product_services\
+/sdcard\
+/bugreports\
+%{nil}
+
 
 %include rpm/dhd/droid-hal-device.inc
 
